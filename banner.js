@@ -44,4 +44,4 @@ function banner(root, key, title, link, linkTitle, updateInterval) {
 
 const bannerContainer = document.querySelector('#bannerContainer');
 
-banner(bannerContainer, '654hblgm9gl8367h', "Погода в Академгородке", "https://vk.com/feed", "Узнать больше", 10000)
+banner(bannerContainer, '654hblgm9gl8367h', "Погода в Академгородке", "https://thelemoh.github.io/temperature/", "Узнать больше", 10000)
