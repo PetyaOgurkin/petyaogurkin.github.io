@@ -13,7 +13,7 @@ function banner(root, key, title, link, linkTitle, updateInterval) {
         const hour = date.getHours();
         const minutes = date.getMinutes() < 10 ? "00" : +date.getMinutes().toString()[0] - 1 + "0";
 
-        const url = `http://gis.krasn.ru/sc/api/1.0/projects/6/aggvalues?key=${key}&indicators=99,103&time_begin=${year}-${mouth}-${day}+${hour}:${minutes}:00&time_interval=10min&sites=4203`
+        const url = `https://gis.krasn.ru/sc/api/1.0/projects/6/aggvalues?key=${key}&indicators=99,103&time_begin=${year}-${mouth}-${day}+${hour}:${minutes}:00&time_interval=10min&sites=4203`
 
 
         fetch(url).then(res => res.text()
