@@ -100,4 +100,4 @@ function directionText(value) {
 
 const bannerContainer = document.querySelector('#bannerContainer');
 
-banner(bannerContainer, '654hblgm9gl8367h', "Погода в Академгородке", "https://thelemoh.github.io/temperature/", 10000)
+banner(bannerContainer, '654hblgm9gl8367h', "Метеостанция ИВМ СО РАН", "https://thelemoh.github.io/temperature/", 10000)
