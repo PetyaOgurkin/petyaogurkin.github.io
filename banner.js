@@ -50,7 +50,6 @@ function banner(root, key, title, link, updateInterval) {
             }));
     }
 
-
     root.appendChild(bannerElement)
     renderBody()
 
@@ -58,7 +57,6 @@ function banner(root, key, title, link, updateInterval) {
         renderBody()
     }, updateInterval)
 }
-
 
 function directionText(value) {
     if (value >= 0 && value < 22)
@@ -96,7 +94,6 @@ function directionText(value) {
     if (value == 360)
         return "С"
 }
-
 
 const bannerContainer = document.querySelector('#bannerContainer');
 
