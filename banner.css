@@ -1,37 +1,59 @@
-.banner__container {
-    margin: 40px 10px 0 10px;
-}
+ .banner__container {
+     margin: 10px 0 0 0;
+ }
 
-.banner {
-    width: 170px;
-    height: 140px;
-    border: solid gray 1px;
-    background-color: #F1F1F1;
-}
+ .banner {
+     width: 250px;
+     height: 110px;
+     border-radius: 10px 10px 0 0;
+     border: solid 1px #696969;
+     background-color: #E2E2E2;
+     /* color: #5979ED; */
+     color: teal;
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+     font-weight: bold;
+ }
 
-.banner__header {
-    text-align: center;
-}
+ .banner__header {
+     text-align: center;
+     border-bottom: solid 1px #696969;
+     background-color: #F6F6F6;
+     border-radius: inherit;
+     font-size: 17px;
+     padding: 2px 0 2px 0;
+ }
 
-.banner__header>h3 {
-    color: teal;
-    margin-top: 5px;
-}
+ .banner__header>a {
+     text-decoration: none;
+     color: teal;
+ }
 
-.banner__body {
-    padding-left: 0.2rem;
-    color: gray;
-    font-weight: bold;
-}
+ .banner__body {
+     display: flex;
+     margin: 2px 0 0 10px;
+ }
 
-.banner__body > p {
-    font-size: 15px;
-    margin-bottom: 5px;
-}
+ .banner__temperaure {
+     text-align: center;
+     font-size: 42px;
+     margin-top: 1px;
+ }
 
-.banner__footer {
-    padding-right: 0.2rem;
-    margin-top: 15px;
-    text-align: right;
-    font-size: 85%;
-}
+ .banner__arrow {
+     margin: 1px 0 0 10px;
+     position: relative;
+ }
+
+ .banner__arrow>* {
+     position: absolute;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+ }
+
+ .info__footer {
+     display: flex;
+     justify-content: space-between;
+     font-size: 17px;
+ }

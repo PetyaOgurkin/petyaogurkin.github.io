@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container {
+            margin: 20px;
+        }
+
+        .banner {
+            width: 250px;
+            height: 110px;
+            border-radius: 10px 10px 0 0;
+            border: solid 1px #696969;
+            background-color: #E2E2E2;
+            color: #5979ED;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: bold;
+        }
+
+        .banner__header {
+            text-align: center;
+            border-bottom: solid 1px #696969;
+            background-color: #F6F6F6;
+            border-radius: inherit;
+            font-size: 17px;
+            padding: 2px 0 2px 0;
+
+        }
+
+        .banner__body {
+            display: flex;
+            margin: 2px 0 0 10px;
+        }
+
+        .banner__temperaure {
+            text-align: center;
+            font-size: 42px;
+            margin-top: 1px;
+        }
+
+        .banner__arrow {
+            margin: 1px 0 0 10px;
+            position: relative;
+        }
+
+        .banner__arrow>* {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+
+        .info__footer {
+            display: flex;
+            justify-content: space-between;
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="banner">
+            <div class="banner__header">Метеостанция ИВМ СО РАН</div>
+            <div class="banner__body">
+                <div class="banner__info">
+                    <div class="banner__temperaure">-55,5 &#8451;</div>
+                    <div class="info__footer">
+                        <div>80 %</div>
+                        <div>ЮЗ, 15 м/с</div>
+                    </div>
+                </div>
+                <div class="banner__arrow">
+                    <object width="80px" type="image/svg+xml" data="bg.svg"></object>
+                    <object width="80px" type="image/svg+xml" data="arrow.svg"
+                        style="transform: rotate(40deg);" id="arrowDirection"></object>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
