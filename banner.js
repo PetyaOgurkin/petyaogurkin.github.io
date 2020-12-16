@@ -19,7 +19,6 @@ function banner(root, key, title, link, updateInterval) {
 
         const url = `https://gis.krasn.ru/sc/api/1.0/projects/6/aggvalues?key=${key}&indicators=100,101,102,103&time_begin=${year}-${mouth}-${day}+${hour}:${minutes}:00&time_interval=10min&sites=4203`
 
-
         fetch(url).then(res => res.text()
             .then(xml => {
                 const parser = new DOMParser();
@@ -30,7 +29,6 @@ function banner(root, key, title, link, updateInterval) {
                 const windSpeed = +nodes[nodes.length - 2].querySelector('avg').innerHTML
                 const direction = nodes[nodes.length - 3].querySelector('avg').innerHTML;
                 const humidity = nodes[nodes.length - 4].querySelector('avg').innerHTML
-
 
                 const wind = windSpeed < 0.3 ? 'Штиль' : `${directionText(direction)}, ${windSpeed.toFixed(1)} м/с`
 
