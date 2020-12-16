@@ -27,7 +27,7 @@ function banner(root, key, title, link, updateInterval) {
 
                 const temp = +nodes[nodes.length - 1].querySelector('avg').innerHTML;
                 const windSpeed = +nodes[nodes.length - 2].querySelector('avg').innerHTML
-                const direction = nodes[nodes.length - 3].querySelector('avg').innerHTML;
+                const direction = +nodes[nodes.length - 3].querySelector('avg').innerHTML;
                 const humidity = nodes[nodes.length - 4].querySelector('avg').innerHTML
 
                 const wind = windSpeed < 0.3 ? 'Штиль' : `${directionText(direction)}, ${windSpeed.toFixed(1)} м/с`
@@ -43,7 +43,7 @@ function banner(root, key, title, link, updateInterval) {
                     <div class="banner__arrow">
                         <object width="80px" type="image/svg+xml" data="bg.svg"></object>
                         ${+windSpeed < 0.3 ? '' : `<object width="80px" type="image/svg+xml" data="arrow.svg"
-                        style = "transform: rotate(${360 - direction}deg);" ></object >`}
+                        style = "transform: rotate(${180 + direction}deg);" ></object >`}
                     </div > `
             }));
     }
