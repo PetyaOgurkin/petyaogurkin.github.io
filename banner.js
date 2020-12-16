@@ -6,7 +6,7 @@ function banner(root, key, title, link, updateInterval) {
     const renderBody = () => {
 
         if (!bannerElement.querySelector('.banner__body')) {
-            bannerElement.innerHTML = `<div class="banner__header"><a href="${link}">${title}</a></div><div class="banner__body">Загрузка...</div>`
+            bannerElement.innerHTML = `<div class="banner__header">${title}</div><div class="banner__body">Загрузка...</div><div class="banner__footer"><a href="${link}">Подробнее</a></div>`
         }
 
         const date = new Date(Date.now() - 60 * 1000 * 60)

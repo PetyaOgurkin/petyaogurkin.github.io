@@ -4,7 +4,7 @@
 
  .banner {
      width: 250px;
-     height: 110px;
+     height: 122px;
      border-radius: 10px 10px 0 0;
      border: solid 1px #696969;
      background-color: #E2E2E2;
@@ -23,10 +23,6 @@
      padding: 2px 0 2px 0;
  }
 
- .banner__header>a {
-     text-decoration: none;
-     color: teal;
- }
 
  .banner__body {
      display: flex;
@@ -56,4 +52,10 @@
      display: flex;
      justify-content: space-between;
      font-size: 17px;
+ }
+
+ .banner__footer {
+     margin: 5px 5px 0 0;
+     text-align: right;
+     font-size: 13px;
  }
