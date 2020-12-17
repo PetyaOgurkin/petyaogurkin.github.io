@@ -31,10 +31,12 @@ function banner(root, key, title, link, updateInterval) {
                 const humidity = nodes[nodes.length - 4].querySelector('avg').innerHTML
 
                 const wind = windSpeed < 0.3 ? 'Штиль' : `${directionText(direction)}, ${windSpeed.toFixed(1)} м/с`
-
+                bannerElement.addEventListener('click', () => {
+                    document.location='https://thelemoh.github.io/temperature/'
+                })
                 bannerElement.querySelector('.banner__body').innerHTML = `
                     <div class="banner__info">
-                        <div class="banner__temperaure">${temp.toFixed(1)} &#8451;</div>
+                        <div class="banner__temperaure">${temp.toFixed(1)} &deg;C</div>
                         <div class="banner__humidity">${humidity}%</div>
                         <div class="banner__humidity">${wind}</div>
                     </div>
@@ -47,10 +49,10 @@ function banner(root, key, title, link, updateInterval) {
     }
 
 
-  /*   <div class="info__footer">
-    <div>${humidity}%</div>
-    <div>${wind}</div>
-</div> */
+    /*   <div class="info__footer">
+      <div>${humidity}%</div>
+      <div>${wind}</div>
+  </div> */
 
     root.appendChild(bannerElement)
     renderBody()
