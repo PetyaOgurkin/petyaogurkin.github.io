@@ -57,9 +57,9 @@ function banner(root, key, title, link, updateInterval) {
     root.appendChild(bannerElement)
     renderBody()
 
-    setInterval(() => {
+   /*  setInterval(() => {
         renderBody()
-    }, updateInterval)
+    }, updateInterval) */
 }
 
 function directionText(value) {
