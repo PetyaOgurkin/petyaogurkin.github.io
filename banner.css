@@ -1,42 +1,43 @@
  .banner__container {
+     display: flex;
+     justify-content: flex-end;
      margin: 10px 0 0 0;
  }
 
  .banner {
-     width: 250px;
-     height: 122px;
-     border-radius: 10px 10px 0 0;
-     border: solid 1px #696969;
-     background-color: #E2E2E2;
+     width: 160px;
+     height: 72px;
+     /* border-radius: 10px 10px 0 0; */
+     border: solid 1px black;
+     background-color: #f1f1f1;
      /* color: #5979ED; */
-     color: teal;
-     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-     font-weight: bold;
+     /* color: teal; */
  }
 
- .banner__header {
+/*  .banner__header {
      text-align: center;
      border-bottom: solid 1px #696969;
      background-color: #F6F6F6;
      border-radius: inherit;
      font-size: 17px;
      padding: 2px 0 2px 0;
- }
+ } */
 
 
  .banner__body {
      display: flex;
+     justify-content: space-between;
      margin: 2px 0 0 10px;
  }
 
  .banner__temperaure {
-     text-align: center;
-     font-size: 42px;
-     margin-top: 1px;
+     /* text-align: center; */
+     font-size: 23px;
+     margin-bottom: 3px;
  }
 
  .banner__arrow {
-     margin: 1px 0 0 10px;
+     margin-right: 69px;
      position: relative;
  }
 
@@ -51,7 +52,7 @@
  .info__footer {
      display: flex;
      justify-content: space-between;
-     font-size: 17px;
+     /* font-size: 17px; */
  }
 
  .banner__footer {

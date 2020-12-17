@@ -6,7 +6,7 @@ function banner(root, key, title, link, updateInterval) {
     const renderBody = () => {
 
         if (!bannerElement.querySelector('.banner__body')) {
-            bannerElement.innerHTML = `<div class="banner__header">${title}</div><div class="banner__body">Загрузка...</div><div class="banner__footer"><a href="${link}">Подробнее</a></div>`
+            bannerElement.innerHTML = `<div class="banner__body">Загрузка...</div>`
         }
 
         const date = new Date(Date.now() - 60 * 1000 * 60)
@@ -35,18 +35,22 @@ function banner(root, key, title, link, updateInterval) {
                 bannerElement.querySelector('.banner__body').innerHTML = `
                     <div class="banner__info">
                         <div class="banner__temperaure">${temp.toFixed(1)} &#8451;</div>
-                        <div class="info__footer">
-                            <div>${humidity} %</div>
-                            <div>${wind}</div>
-                        </div>
+                        <div class="banner__humidity">${humidity}%</div>
+                        <div class="banner__humidity">${wind}</div>
                     </div>
                     <div class="banner__arrow">
-                        <object width="80px" type="image/svg+xml" data="bg.svg"></object>
-                        ${+windSpeed < 0.3 ? '' : `<object width="80px" type="image/svg+xml" data="arrow.svg"
+                        <object width="67px" type="image/svg+xml" data="bg.svg"></object>
+                        ${+windSpeed < 0.3 ? '' : `<object width="67px" type="image/svg+xml" data="arrow.svg"
                         style = "transform: rotate(${180 + direction}deg);" ></object >`}
                     </div > `
             }));
     }
+
+
+  /*   <div class="info__footer">
+    <div>${humidity}%</div>
+    <div>${wind}</div>
+</div> */
 
     root.appendChild(bannerElement)
     renderBody()
