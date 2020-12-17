@@ -7,6 +7,6 @@
   </g>
  </g>
  <g>
-  <polyline fill="#f1f1f1" stroke="black" stroke-width="3" points="110 165 110 65 120 65 100 35 80 65 90 65 90 165 111 165" />
+  <polyline fill="rgb(0,172,230)" stroke="rgb(1,82,119)" stroke-width="3" points="110 165 110 65 120 65 100 35 80 65 90 65 90 165 111 165" />
  </g>
 </svg>
