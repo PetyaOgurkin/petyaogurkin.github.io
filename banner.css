@@ -5,7 +5,7 @@
  }
 
  .banner {
-     width: 184px;
+     width: 164px;
      height: 72px;
      /* border-radius: 10px 10px 0 0; */
      border: solid 1px black;
@@ -39,7 +39,12 @@
  .banner__temperaure {
      /* text-align: center; */
      font-size: 23px;
+     margin-top: 3px;
      margin-bottom: 3px;
+ }
+
+ .banner__humidity {
+     font-size: 13px;
  }
 
  .banner__arrow {
