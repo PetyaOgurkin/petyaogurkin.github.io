@@ -41,9 +41,9 @@ function banner(root, key, title, link, updateInterval) {
                         <div class="banner__humidity">${wind}</div>
                     </div>
                     <div class="banner__arrow">
-                        <object width="67px" type="image/svg+xml" data="bg.svg"></object>
-                        ${+windSpeed < 0.3 ? '' : `<object width="67px" type="image/svg+xml" data="arrow.svg"
-                        style = "transform: rotate(${180 + direction}deg);" ></object >`}
+                        <img width="67px" src="bg.svg"></img>
+                        ${+windSpeed < 0.3 ? '' : `<img width="67px" src="arrow.svg"
+                        style = "transform: rotate(${180 + direction}deg);"></img>`}
                     </div > `
             }));
     }
