@@ -25,14 +25,37 @@ function banner(root, key, title, link, updateInterval) {
                 const parsered = parser.parseFromString(xml, "application/xml");
                 const nodes = parsered.querySelectorAll("aggvalue")
 
-                const temp = +nodes[nodes.length - 1].querySelector('avg').innerHTML;
+                const time = nodes[nodes.length - 1].getAttribute('time')
+
+                let humidity, direction, windSpeed, temp;
+
+                let timeIterator = nodes.length - 1;
+                while (timeIterator >= 0) {
+                    if (time === nodes[timeIterator].getAttribute('time')) {
+                        switch (nodes[timeIterator].getAttribute('indicator')) {
+                            case '100': humidity = nodes[timeIterator].querySelector('avg').innerHTML; break;
+                            case '101': direction = +nodes[timeIterator].querySelector('avg').innerHTML; break;
+                            case '102': windSpeed = +nodes[timeIterator].querySelector('avg').innerHTML; break;
+                            case '103': temp = +nodes[timeIterator].querySelector('avg').innerHTML; break;
+
+                            default:
+                                break;
+                        }
+                        timeIterator--;
+                    }
+                    else {
+                        break;
+                    }
+                }
+
+                /* const temp = +nodes[nodes.length - 1].querySelector('avg').innerHTML;
                 const windSpeed = +nodes[nodes.length - 2].querySelector('avg').innerHTML
                 const direction = +nodes[nodes.length - 3].querySelector('avg').innerHTML;
-                const humidity = nodes[nodes.length - 4].querySelector('avg').innerHTML
+                const humidity = nodes[nodes.length - 4].querySelector('avg').innerHTML */
 
                 const wind = windSpeed < 0.3 ? 'Штиль' : `${directionText(direction)}, ${windSpeed.toFixed(1)} м/с`
                 bannerElement.addEventListener('click', () => {
-                    document.location='https://thelemoh.github.io/temperature/'
+                    document.location = 'https://thelemoh.github.io/temperature/'
                 })
                 bannerElement.querySelector('.banner__body').innerHTML = `
                     <div class="banner__info">
@@ -42,7 +65,7 @@ function banner(root, key, title, link, updateInterval) {
                     </div>
                     <div class="banner__arrow">
                         <img width="67px" src="bg.svg"></img>
-                        ${+windSpeed < 0.3 ? '' : `<img width="67px" src="arrow.svg"
+                        ${+windSpeed < 0.3 || !direction ? '' : `<img width="67px" src="arrow.svg"
                         style = "transform: rotate(${180 + direction}deg);"></img>`}
                     </div > `
             }));
@@ -57,9 +80,9 @@ function banner(root, key, title, link, updateInterval) {
     root.appendChild(bannerElement)
     renderBody()
 
-   /*  setInterval(() => {
-        renderBody()
-    }, updateInterval) */
+    /*  setInterval(() => {
+         renderBody()
+     }, updateInterval) */
 }
 
 function directionText(value) {
@@ -97,6 +120,9 @@ function directionText(value) {
         return "ССЗ"
     if (value == 360)
         return "С"
+    if (!value) {
+        return "-"
+    }
 }
 
 const bannerContainer = document.querySelector('#bannerContainer');
