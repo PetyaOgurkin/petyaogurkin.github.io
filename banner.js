@@ -12,10 +12,12 @@ function banner(root, key, title, link, updateInterval) {
         const date = new Date(Date.now() - 60 * 1000 * 60)
 
         const year = date.getFullYear();
-        const mouth = date.getMonth() + 1;
-        const day = date.getDate();
+        const mouth = (date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1);
+        const day = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
         const hour = date.getHours();
         const minutes = date.getMinutes() < 10 ? "00" : +date.getMinutes().toString()[0] - 1 + "0";
+
+        console.log(day);
 
         const url = `https://gis.krasn.ru/sc/api/1.0/projects/6/aggvalues?key=${key}&indicators=100,101,102,103&time_begin=${year}-${mouth}-${day}+${hour}:${minutes}:00&time_interval=10min&sites=4203`
 
