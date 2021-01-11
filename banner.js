@@ -2,12 +2,16 @@ function banner(root, key, title, link, updateInterval) {
 
     const bannerElement = document.createElement("div");
     bannerElement.classList.add('banner');
+    bannerElement.addEventListener('click', () => {
+        document.location = 'https://thelemoh.github.io/temperature/'
+    })
 
     const renderBody = () => {
 
         if (!bannerElement.querySelector('.banner__body')) {
             bannerElement.innerHTML = `<div class="banner__body">Загрузка...</div>`
         }
+       
 
         const date = new Date(Date.now() - 60 * 1000 * 60)
 
@@ -56,9 +60,7 @@ function banner(root, key, title, link, updateInterval) {
                 const humidity = nodes[nodes.length - 4].querySelector('avg').innerHTML */
 
                 const wind = windSpeed < 0.3 ? 'Штиль' : `${directionText(direction)}, ${windSpeed.toFixed(1)} м/с`
-                bannerElement.addEventListener('click', () => {
-                    document.location = 'https://thelemoh.github.io/temperature/'
-                })
+
                 bannerElement.querySelector('.banner__body').innerHTML = `
                     <div class="banner__info">
                         <div class="banner__temperaure">${temp.toFixed(1)} &deg;C</div>
