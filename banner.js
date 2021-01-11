@@ -70,7 +70,7 @@ function banner(root, key, title, link, updateInterval) {
                     <div class="banner__arrow">
                         <img width="67px" src="bg.svg"></img>
                         ${+windSpeed < 0.3 || !direction ? '' : `<img width="67px" src="arrow.svg"
-                        style = "transform: rotate(${180 + direction}deg);"></img>`}
+                        style = "transform: rotate(${180 + directionRound(direction)}deg);"></img>`}
                     </div > `
             }));
     }
@@ -128,6 +128,43 @@ function directionText(value) {
         return "-"
     }
 }
+
+function directionRound(value) {
+    if (value >= 0 && value < 11.25)
+    return 0
+    if (value >= 11.25 && value < 33.75)
+    return 22.5
+    if (value >= 33.75 && value < 56.25)
+    return 45
+    if (value >= 56.25 && value < 78.75)
+    return 67.5
+    if (value >= 78.75 && value < 101.25)
+    return 90
+    if (value >= 101.25 && value < 123.75)
+    return 112.5
+    if (value >= 123.75 && value < 146.25)
+    return 135
+    if (value >= 146.25 && value < 168.75)
+    return 157.5
+    if (value >= 168.75 && value < 191.25)
+    return 180
+    if (value >= 191.25 && value < 213.75)
+    return 202.5
+    if (value >= 213.75 && value < 236.25)
+    return 225
+    if (value >= 236.25 && value < 258.75)
+    return 247.5
+    if (value >= 258.75 && value < 281.25)
+    return 270
+    if (value >= 281.25 && value < 303.75)
+    return 292.5
+    if (value >= 303.75 && value < 326.25)
+    return 315
+    if (value >= 326.25 && value < 348.75)
+    return 337.5
+    if (value >= 348.75)
+    return 0
+    }
 
 const bannerContainer = document.querySelector('#bannerContainer');
 
